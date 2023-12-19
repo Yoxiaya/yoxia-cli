@@ -1,10 +1,11 @@
 #!/usr/bin/env node
+"use strict";
 import { program } from "commander";
 import inquirer from "inquirer";
-import createYox from "../src/create.js";
-import consoleColors from "../utils/index.js";
-import runProject from "../src/start.js";
 import { question } from "./config.js";
+import consoleColors from "../utils/index.js";
+import createYox from "../src/create.js";
+import runProject from "../src/start.js";
 
 const { green } = consoleColors;
 
@@ -17,7 +18,7 @@ program
     .command("create")
     .description("create a project")
     .action(() => {
-        green("🍕 🍕 🍕 " + "欢迎使用yoxcli,轻松构建ts项目～🎉🎉🎉");
+        green("🍕 🍕 🍕 欢迎使用yox-cli,轻松构建ts项目～ 🎉 🎉 🎉");
         inquirer.prompt(question).then((ans) => {
             if (ans.conf) {
                 createYox(ans);

@@ -10,6 +10,11 @@ export const question = [
         when: (res) => Boolean(res.conf),
     },
     {
+        name: "version",
+        message: "请输入项目版本号？",
+        when: (res) => Boolean(res.conf),
+    },
+    {
         name: "author",
         message: "请输入作者？",
         when: (res) => Boolean(res.conf),

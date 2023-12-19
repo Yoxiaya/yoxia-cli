@@ -1,6 +1,6 @@
-import { fileURLToPath } from "node:url";
-import path from "node:path";
 import fs from "fs";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
 import utils from "../utils/index.js";
 import npm from "./npm.js";
 
@@ -8,7 +8,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 let fileCount = 0; /* 文件数量 */
 let dirCount = 0; /* 文件夹数量 */
-let flat = 0; /* readir数量 */
+let flat = 0; /* readDir数量 */
 let isInstall = false;
 
 export default function (res) {
@@ -24,11 +24,12 @@ function revisePackageJson(res, sourcePath) {
         /* 读取文件 */
         fs.readFile(sourcePath + "/package.json", (err, data) => {
             if (err) throw err;
-            const { author, name } = res;
+            const { author, name, version } = res;
             let json = data.toString();
             /* 替换模版 */
             json = json.replace(/template-name/g, name.trim());
             json = json.replace(/template-author/g, author.trim());
+            json = json.replace(/template-version/g, version.trim());
             const path = process.cwd() + "/package.json";
             /* 写入文件 */
             fs.writeFile(path, Buffer.from(json), () => {
@@ -41,9 +42,9 @@ function revisePackageJson(res, sourcePath) {
 
 /**
  *
- * @param {*} sourcePath   //template资源路径
- * @param {*} currentPath  //当前项目路径
- * @param {*} cb           //项目复制完成回调函数
+ * @param {string} sourcePath   //template资源路径
+ * @param {string} currentPath  //当前项目路径
+ * @param {Function} cb           //项目复制完成回调函数
  */
 function copy(sourcePath, currentPath, cb) {
     flat++;

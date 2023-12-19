@@ -1,6 +1,6 @@
 {
     "name": "template-name",
-    "version": "1.0.0",
+    "version": "template-version",
     "description": "自用ts脚手架",
     "main": "index.js",
     "type": "module",
