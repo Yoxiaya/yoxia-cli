@@ -28,7 +28,7 @@ program
 
 /* start 运行项目 */
 program
-    .command("start")
+    .command("run")
     .description("start a project")
     .action(function () {
         green("--------运行项目-------");

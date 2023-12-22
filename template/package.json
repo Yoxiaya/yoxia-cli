@@ -1,7 +1,7 @@
 {
     "name": "template-name",
     "version": "template-version",
-    "description": "自用ts脚手架",
+    "description": "脚手架",
     "main": "index.js",
     "type": "module",
     "scripts": {
