@@ -12,6 +12,7 @@
         "skipLibCheck": true,
         "outDir": "./dist",
         "allowImportingTsExtensions": true,
+        "allowSyntheticDefaultImports": true,
         "noEmit": true
     },
     "ts-node": {
