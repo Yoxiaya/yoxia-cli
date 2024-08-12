@@ -10,7 +10,7 @@ import runProject from "../src/start.js";
 const { green } = consoleColors;
 
 program
-    .version("0.0.1")
+    .version("0.0.2", "-v, --version", "output the current version")
     .option("-d, --debug", "output extra debugging")
     .option("-s, --small", "small output");
 
