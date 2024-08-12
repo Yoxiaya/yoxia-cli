@@ -1,5 +1,5 @@
 {
-    "include": ["./src/**/*.ts", "App.ts", "**/*.ts", "config/**/*"],
+    "include": ["./src/**/*.ts", "main.ts", "**/*.ts", "config/**/*"],
     "exclude": ["./dist"],
     "compilerOptions": {
         "target": "ESNext",

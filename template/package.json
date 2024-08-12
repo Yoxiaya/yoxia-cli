@@ -5,8 +5,8 @@
     "main": "index.js",
     "type": "module",
     "scripts": {
-        "start": "nodemon --esm ./App.ts",
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "start": "ts-node  --experimental-specifier-resolution=node  ./main.ts",
+        "dev": "nodemon --experimental-specifier-resolution=node ./main.ts"
     },
     "keywords": [],
     "author": "template-author",
